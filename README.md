@@ -58,7 +58,8 @@ int main(void)
 }
 ```
 >	QT11(0,25) - Crie estruturas novas e correlacione com sua realidade. Use estruturas de repetição e estruturas switch. Ao final, as fichas com os cadastros deverão ser apresentadas.
->'''#include <stdio.h>
+'''C
+#include <stdio.h>
 #include <stdlib.h>
 
 #define MAX_PESSOAS 100
@@ -74,7 +75,6 @@ int main() {
     Cadastro cadastros[MAX_PESSOAS]; // Array para armazenar os cadastros
     int numCadastros = 0; // Contador de cadastros realizados
     int opcao;
-
     while (1) {
         printf("----- Menu -----\n");
         printf("1. Cadastrar pessoa\n");
@@ -82,7 +82,6 @@ int main() {
         printf("3. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
-
         switch (opcao) {
             case 1:
                 if (numCadastros < MAX_PESSOAS) {
@@ -93,14 +92,12 @@ int main() {
                     scanf("%d", &cadastros[numCadastros].idade);
                     printf("Digite o email da pessoa: ");
                     scanf("%s", cadastros[numCadastros].email);
-
                     numCadastros++;
                     printf("Cadastro realizado com sucesso!\n");
                 } else {
                     printf("Limite máximo de cadastros atingido!\n");
                 }
                 break;
-
             case 2:
                 printf("----- Fichas de Cadastro -----\n");
                 for (int i = 0; i < numCadastros; i++) {
@@ -110,16 +107,13 @@ int main() {
                     printf("-----------------------------\n");
                 }
                 break;
-
             case 3:
                 printf("Saindo...\n");
                 exit(0);
-
             default:
                 printf("Opção inválida! Por favor, escolha uma opção válida.\n");
         }
     }
-
     return 0;
 }'''
 >	QT12(0,25) - Crie estruturas em C para organizar alguma necessidade sua e realize o cadastro dos registros. Utilize estruturas de loop para realizar mais de um registro. Ao final, apresente todos os cadastros realizados. Justifique todo o seu código.
@@ -127,7 +121,8 @@ int main() {
 # Funções em C
 
 >	Declare funções. Uma com opção de menu para o R.U, Biblioteca Central, Teatro ou H.U e mostre-os na tela. Outra que mostre apenas uma saudação do dia após leitura do nome da pessoa. (QT9 - 0,25)
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 
 void exibirMenu() {
     printf("Opções:\n");
@@ -146,11 +141,9 @@ void exibirSaudacao() {
 
 int main() {
     int opcao;
-
     exibirMenu();
     printf("Digite uma opção: ");
     scanf("%d", &opcao);
-
     switch (opcao) {
         case 1:
             printf("Você selecionou R.U\n");
@@ -168,13 +161,12 @@ int main() {
             printf("Opção inválida\n");
             break;
     }
-
     exibirSaudacao();
-
     return 0;
 }'''
 >	Declare funções para: Totalizar a quantidade de árvores em cada setor(CCHL, CCE, CT, CCN, DIE, CCS) da ufpi através de entrada de dados pelo teclado. Ao final mostrar o total de árvores na UFPI. (Q10 - 0,25).
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 
 int totalizarArvoresSetor(char setor[]) {
     int quantidade;
@@ -185,16 +177,13 @@ int totalizarArvoresSetor(char setor[]) {
 
 int main() {
     int totalUfpi = 0;
-    
     totalUfpi += totalizarArvoresSetor("CCHL");
     totalUfpi += totalizarArvoresSetor("CCE");
     totalUfpi += totalizarArvoresSetor("CT");
     totalUfpi += totalizarArvoresSetor("CCN");
     totalUfpi += totalizarArvoresSetor("DIE");
     totalUfpi += totalizarArvoresSetor("CCS");
-    
     printf("Total de árvores na UFPI: %d\n", totalUfpi);
-    
     return 0;
 }'''
 # Vetores em C
@@ -202,7 +191,6 @@ Declarar e preencher um vetor em C nos possibilita muitas utilizações. Observe
 Observe o código abaixo.
 ```C
 #include <stdio.h>
-
 int main()
 {
     int meuVetor[3];
@@ -219,7 +207,8 @@ int main()
 }
 ```
 >	QT04 (0,25 pontos) - Altere o código acima para 10 posições de vetor atribuindo 10 valores inteiros manuais e imprimindo todos eles na tela.
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 int main()
 {
     int meuVetor[9];
@@ -298,25 +287,22 @@ int main()
 }
 ```
 >	QT06 (0,5 - pontos) - Crie um código onde sejam lidos 20 votos. Os votos serão armazenados em um vetor inteiro de elementos. Cada número do voto corresponde a um time de futebol que será mostrado em um menu com 4 opções sendo elas: Flamengo, Vasco, São Paulo, Corinthians. Totalize os votos ao final e mostre na tela.
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 
 int main()
 {
     int votos[20];
     int contador[4] = {0};
     int voto;
-
     printf("===== Menu de Times de Futebol =====\n");
     printf("1 - Flamengo\n");
     printf("2 - Vasco\n");
     printf("3 - São Paulo\n");
     printf("4 - Corinthians\n");
-
-
     for (int i = 0; i < 20; i++) {
         printf("Digite o voto %d: ", i + 1);
         scanf("%d", &voto);
-
         if (voto >= 1 && voto <= 4) {
             votos[i] = voto;
             contador[voto - 1]++; 
@@ -324,19 +310,18 @@ int main()
             printf("Voto inválido! Digite um número de 1 a 4.\n");
             i--;
         }
-    }
-
-   
+    }   
     printf("\n===== Resultado dos Votos =====\n");
     printf("Flamengo: %d votos\n", contador[0]);
     printf("Vasco: %d votos\n", contador[1]);
     printf("São Paulo: %d votos\n", contador[2]);
     printf("Corinthians: %d votos\n", contador[3]);
-
-    return 0;'''
+    return 0;
 }
+```
 >	QT07 (0,5 - pontos) - Refaça a mesma questão anterior utilizando o While e acrescentando uma condição de parada chamada "Totalizar" representada pelo número 99 no menu.
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 int main()
 {
     int votos[20]; 
@@ -376,7 +361,8 @@ int main()
     return 0;
 }'''
 >	QT08 (0,5 - pontos) - Crie um vetor de 20 posições para ler números correspondente ao estilo musical da turma (1 - Sertanejo, 2 - Internacional, 3 - Pop, 4 - Coreano, 5 - Forró, 6 - Funk, 7 - Gospel, 8 - Rock, 9 - Eletrônica, 10 - Classica). Totalize os votos por estilo e mostre ao final. Utilize o Do..while.
-'''#include <stdio.h>
+'''C
+#include <stdio.h>
 
 int main()
 {
