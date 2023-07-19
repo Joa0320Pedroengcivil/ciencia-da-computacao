@@ -121,7 +121,220 @@ int main() {
     return 0;
 }
 ```
+'''#include <stdio.h>
 
+void cabecalho(){
+    printf("\nMinistério da Educação");
+    printf("\nUniversidade Federal do Piauí");
+    printf("\nDepartamento de Tecnologia");
+    printf("\nCurso de Engenharia Civil");
+}
+
+int questoes(){
+    int questao;
+    printf("\n[1] - Tecnologia");
+    printf("\n[2] - Lógica");
+    printf("\n[3] - Estrutura básica de C");
+    printf("\n[4] - Variaveis");
+    printf("\n[5] - Tipo de dados e condicionais");
+    printf("\n[6] - Laços de repetição");
+    printf("\n[7] - Funções sem parâmetros");
+    printf("\n[8] - Funções com parâmetros");
+    printf("\n[9] - Vetores");
+    printf("\n[10] - Registros");
+    printf("\n[11] - Sair");
+    printf("\nQual questão você deseja fazer.: ");
+    scanf("%d",&questao);
+    return questao;
+}
+
+void questao01(){
+    int x;
+    fflush(stdin);
+    printf("\n\nO que significa na sua opinião 'informática'?");
+    printf("\n[1] - Tecnologias de processamento em meio digital");
+    printf("\n[2] - Informação automática");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmenos um ponto.");
+    }else{
+        printf("\nacertou. Um ponto");
+    }
+}
+
+void questao02(){int x;
+    fflush(stdin);
+    printf("\n\nO que é 'linguagem de programação'?");
+    printf("\n[1] - Programa usado para fazer os algoritmos virarem novos programas");
+    printf("\n[2] - programa usado exclusivamente para jogos");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+}
+
+void questao03(){
+    fflush(stdin);
+    printf("\n\nQual a biblioteca em c mais usada ?");
+    printf("\n[1] - #include <stdio.h>;
+int main(){
+");
+    printf("\n[2] -printf("\n\nEscolha.: "); ");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+
+void questao04(){
+    fflush(stdin);
+    printf("\n\nQual a função de saída de dados em c ?");
+    printf("\n[1] - printf");
+    printf("\n[2] -printf("\n\nEscolha.:  scanf");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+void questao05(){
+    fflush(stdin);
+    printf("\n\n A função if faz o que?");
+    printf("\n[1] - demonstra que a condição é verdadeira ");
+    printf("\n[2] -printf("demonstra que a condição é falsa");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+}
+
+void questao06(){
+    fflush(stdin);
+    printf("\n\n Qual o laço de repetição conta com incremento automático do contador");
+    printf("\n[1] - for ");
+    printf("\n[2] -printf("while");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+
+void questao07(){
+    fflush(stdin);
+    printf("\n\n o que é uma função sem parâmetro");
+    printf("\n[1] - função que não retorna um registro específico ");
+    printf("\n[2] -printf("função que retorna um registro especifico");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+
+void questao08(){
+    fflush(stdin);
+    printf("\n\n o que é uma função com parâmetro");
+    printf("\n[1] - função que retorna um registro específico ");
+    printf("\n[2] -printf("função que não retorna um registro especifico");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+
+void questao09(){
+    fflush(stdin);
+    printf("\n\n o que é um vetor para a programação");
+    printf("\n[1] - São variáveis criadas com várias posições de memória todas do mesmo tipo ");
+    printf("\n[2] -printf(" E algo que apresenta intensidade, direção e sentido");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+    
+}
+void questao10(){
+    fflush(stdin);
+    printf("\n\n o qual função que faz um registro");
+    printf("\n[1] - struct");
+    printf("\n[2] -printf(" Scanf");
+    printf("\n\nEscolha.: ");
+    scanf("%d",&x);
+    if (x == 1){
+        printf("\nmais um ponto.");
+    }else{
+        printf("\nmenos Um ponto");
+    }
+    
+}
+int main() {
+    int opc;
+    cabecalho();
+    printf("\n----------------------------------------------------------------------");
+    opc = questoes();
+    switch(opc){
+        case 1: {
+            questao01();break;
+        }
+        case 2: {
+            questao02();break;
+        }
+        case 3:{
+            questao03();break;
+        }
+        case 4:{
+            questao04();break;
+        }
+        case 5:{
+            questao05();break;
+        }
+        case 6:{
+            questao06();break;
+        }
+        case 7:{
+            questao07();break;
+        }
+        case 8:{
+            questao08();break;
+        }
+        case 9:{
+            questao09();break;
+        }
+        case 10:{
+            questao10();break;
+        }
+    }
+    return 0;
+}'''
 
 ## Vetor de registros
 
